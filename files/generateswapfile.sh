@@ -9,7 +9,8 @@ fi
 
 if [ ! -e $1 ]
 then
-    dd if=/dev/zero of=$1 bs=1M count=$2
+    fallocate -l $2 $1
+    chmod 0600 $1
     mkswap $1
     swapon $1
 fi
