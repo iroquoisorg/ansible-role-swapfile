@@ -16,9 +16,13 @@ This role was prepared and tested for Ubuntu 16.04.
 
 swapfile_location: /swapfile
 swapfile_size: 512MB
-swapfile_swappiness: False
-swapfile_vfs_cache_pressure: False
-swapfile_use_dd: False
-swapfile_check_swap_on_boot: False
+swapfile_swappiness: false
+swapfile_vfs_cache_pressure: false
+swapfile_use_dd: false
+swapfile_check_swap_on_boot: false
 
 ```
+
+# Development
+
+Please check [development guide](DEVELOPMENT.md) for details about developing and testing this role.

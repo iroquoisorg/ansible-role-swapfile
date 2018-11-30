@@ -12,17 +12,21 @@
 - name: Set swapfile permissions
   file:
     path: "{{ swapfile_location }}"
-    mode: 600
+    mode: 0600
   when: swapfile_size != false
 
 - name: Create swapfile
   command: "mkswap {{ swapfile_location }}"
   register: create_swapfile
   when: swapfile_size != false and write_swapfile.changed
+  tags:
+    - skip_ansible_lint
 
 - name: Enable swapfile
   command: "swapon {{ swapfile_location }}"
   when: swapfile_size != false and create_swapfile.changed
+  tags:
+    - skip_ansible_lint
 
 - name: Add swapfile to /etc/fstab
   lineinfile:
