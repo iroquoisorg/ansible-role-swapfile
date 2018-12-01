@@ -2,5 +2,9 @@
 - name: Converge
   hosts: all
   become: true
+  vars:
+    swapfile_location: /root/swapfile
+    swapfile_size: 64MB
+    ci_build: true
   roles:
     - role: ansible-role-swapfile

@@ -5,3 +5,4 @@ swapfile_swappiness: false
 swapfile_vfs_cache_pressure: false
 swapfile_use_dd: false
 swapfile_check_swap_on_boot: false
+ci_build: false

@@ -24,7 +24,7 @@
 
 - name: Enable swapfile
   command: "swapon {{ swapfile_location }}"
-  when: swapfile_size != false and create_swapfile.changed
+  when: swapfile_size != false and create_swapfile.changed and not ci_build
   tags:
     - skip_ansible_lint
 
